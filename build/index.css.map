@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///index.css"],"names":[],"mappings":"AAAA;IACI,iCAAiC;AACrC","file":"index.css","sourcesContent":[".wp-block-hwl-blokkendoos-container {\n    background-color: blue !important;\n}\n"],"sourceRoot":""}

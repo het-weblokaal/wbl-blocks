@@ -1,0 +1,24 @@
+{
+  "name": "hwl-blokkendoos",
+  "version": "1.0.0",
+  "description": "Wordpress blokkendoos voor projecten van Het Weblokaal",
+  "main": "build/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@wordpress/scripts": "12.1.1"
+  },
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikjoling/hwl-blokkendoos.git"
+  },
+  "author": "Erik Joling <erik@hetweblokaal.nl>",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/erikjoling/hwl-blokkendoos/issues"
+  },
+  "homepage": "https://github.com/erikjoling/hwl-blokkendoos#readme"
+}
