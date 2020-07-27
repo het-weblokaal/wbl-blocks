@@ -29,7 +29,7 @@ For app logic and setup
 - `app/bootstrap-autoload.php`: startpoint for loading custom function files
 - `app/<function-files>`: custom function files
 
-### resources ###
+#### resources ####
 The home for build assets like blocks, javascript, postcss, images, svg, language.
 
 - `resources/blocks`:
@@ -37,7 +37,7 @@ The home for build assets like blocks, javascript, postcss, images, svg, languag
 - `resources/css`:
 - `resources/...`:
 
-### public ###
+#### public ####
 The result of the compiled build process; combined javascript and or minified, optimized images..
 
 - `resources/blocks`:
@@ -46,5 +46,10 @@ The result of the compiled build process; combined javascript and or minified, o
 - `resources/fonts`:
 - `resources/...`:
 
-### config ###
+#### config ####
 Optional configuration files
+
+### Webpack ###
+We are using Laravel mix to fire up our Webpack build.
+
+

@@ -12,7 +12,7 @@
 /**
  * WordPress dependencies
  */
-const { registerBlockType } = wp.blocks;
+// const { registerBlockType } = wp.blocks;
 
 /**
  * Import blocks
