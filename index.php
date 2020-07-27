@@ -19,8 +19,8 @@ namespace HWL\Blokkendoos;
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-// Load the Plugin class
-require_once( __DIR__ . '/app/classes/Plugin.php' );
+// Load the App class
+require_once( __DIR__ . '/app/classes/App.php' );
 
 // Boot the app
-Plugin::boot( __FILE__ );
+App::boot();

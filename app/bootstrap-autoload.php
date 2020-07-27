@@ -19,8 +19,8 @@ namespace HWL\Blokkendoos;
 # Autoload Composer Dependancies
 # ------------------------------------------------------------------------------
 
-if ( file_exists( Plugin::get_file_path( 'vendor/autoload.php' ) ) ) {
-	require_once( Plugin::get_file_path( 'vendor/autoload.php' ) );
+if ( file_exists( App::get_file_path( 'vendor/autoload.php' ) ) ) {
+	require_once( App::get_file_path( 'vendor/autoload.php' ) );
 }
 
 # ------------------------------------------------------------------------------
@@ -28,9 +28,8 @@ if ( file_exists( Plugin::get_file_path( 'vendor/autoload.php' ) ) ) {
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
-	require_once( Plugin::get_file_path( "app/classes/{$file}.php" ) );
+	require_once( App::get_file_path( "app/classes/{$file}.php" ) );
 }, [
-	'Dev',
 	// 'Compatibility',
 	// 'Config',
 	// 'Page',
@@ -43,7 +42,7 @@ array_map( function( $file ) {
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
-	require_once( Plugin::get_file_path( "app/{$file}.php" ) );
+	require_once( App::get_file_path( "app/{$file}.php" ) );
 }, [
 	// 'functions-setup',
 	'functions-blocks',

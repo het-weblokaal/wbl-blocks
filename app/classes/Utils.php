@@ -59,7 +59,7 @@ final class Utils {
 	private static function set_mix_manifest() {
 
 		// Get mix manifest file
-		$manifest = Plugin::get_file_path( static::$asset_dir . '/mix-manifest.json' );
+		$manifest = App::get_file_path( static::$asset_dir . '/mix-manifest.json' );
 
 		// Get the contents of the manifest
 		$manifest = file_exists( $manifest ) ? json_decode( file_get_contents( $manifest ), true ) : false;
@@ -92,7 +92,7 @@ final class Utils {
 			$file = $manifest[ $file ];
 		}
 
-		return Plugin::get_file_uri( static::$asset_dir . $file );
+		return App::get_file_uri( static::$asset_dir . $file );
 	}
 
 	/**
@@ -141,7 +141,7 @@ final class Utils {
 	public static function get_version_type() {
 		$version_type = 'production';
 
-		$version = Plugin::get_version();
+		$version = App::get_version();
 
 	    // Check if version is under version 1 or if it contains letters (dev, alpha, beta, rc)
 		if ( version_compare($version, "1", "<") || preg_match( "/[a-zA-Z]/", $version) ) {
