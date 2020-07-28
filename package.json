@@ -1,11 +1,11 @@
 {
 	"name": "hwl-blokkendoos",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Een pakket met WordPress blokken. Brengt ook verdere instellingen met zich mee.",
 	"author": "Het Weblokaal <erik@hetweblokaal.nl>",
 	"license": "GPL-2.0+",
 	"homepage": "https://www.hetweblokaal.nl/",
-	"main": "resources/js/plugin.js",
+	"main": "resources/js/app.js",
 	"scripts": {
 		"build": "npm run prod && npm run i18n",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

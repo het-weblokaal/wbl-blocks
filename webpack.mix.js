@@ -92,8 +92,9 @@ mix.version();
 /**
  * Compile blocks
  */
-mix.react(   `${devPath}/blocks/blocks.js`,         'blocks' );
-// mix.postCss( `${devPath}/blocks/blocks-editor.css`, 'blocks' );
+mix.react(   `${devPath}/blocks/blocks.js`,         'blocks' )
+   .postCss( `${devPath}/blocks/blocks.editor.css`, 'blocks' )
+   .postCss( `${devPath}/blocks/blocks.css`, 	    'blocks' );
 
 /**
  * Copy images and fonts to public
