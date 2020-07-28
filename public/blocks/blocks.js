@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/blocks/blocks-editor.css":
+/***/ "./resources/blocks/blocks.css":
+/*!*************************************!*\
+  !*** ./resources/blocks/blocks.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYmxvY2tzL2Jsb2Nrcy5jc3M/MTM1NSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiIuL3Jlc291cmNlcy9ibG9ja3MvYmxvY2tzLmNzcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIHJlbW92ZWQgYnkgZXh0cmFjdC10ZXh0LXdlYnBhY2stcGx1Z2luIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/blocks/blocks.css\n");
+
+/***/ }),
+
+/***/ "./resources/blocks/blocks.editor.css":
 /*!********************************************!*\
-  !*** ./resources/blocks/blocks-editor.css ***!
+  !*** ./resources/blocks/blocks.editor.css ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/css-loader/dist/cjs.js):\\nTypeError: text.forEach is not a function\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/extract-text-webpack-plugin/dist/loader.js:145:16\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compiler.js:343:11\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compiler.js:681:15\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:22:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compiler.js:678:31\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1423:35\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1414:32\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1409:36\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1405:32\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:4:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at Compilation.seal (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1342:27)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compiler.js:675:18\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1261:4\\n    at AsyncSeriesHook.eval [as callAsync] (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:13:1)\\n    at AsyncSeriesHook.lazyCompileHook (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/Hook.js:154:20)\\n    at Compilation.finish (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1253:28)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compiler.js:672:17\\n    at eval (eval at create (/home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1185:12\\n    at /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/node_modules/webpack/lib/Compilation.js:1097:9\\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3Jlc291cmNlcy9ibG9ja3MvYmxvY2tzLWVkaXRvci5jc3MuanMiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/blocks/blocks-editor.css\n");
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzPzQxNDUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiLi9yZXNvdXJjZXMvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gcmVtb3ZlZCBieSBleHRyYWN0LXRleHQtd2VicGFjay1wbHVnaW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/blocks/blocks.editor.css\n");
 
 /***/ }),
 
@@ -109,14 +120,15 @@ eval("/**\n * Gutenberg Blocks\n *\n * All blocks related JavaScript files shoul
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************!*\
-  !*** multi ./resources/blocks/blocks.js ./resources/blocks/blocks-editor.css ***!
-  \*******************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** multi ./resources/blocks/blocks.js ./resources/blocks/blocks.editor.css ./resources/blocks/blocks.css ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/resources/blocks/blocks.js */"./resources/blocks/blocks.js");
-module.exports = __webpack_require__(/*! /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/resources/blocks/blocks-editor.css */"./resources/blocks/blocks-editor.css");
+__webpack_require__(/*! /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/resources/blocks/blocks.editor.css */"./resources/blocks/blocks.editor.css");
+module.exports = __webpack_require__(/*! /home/erik/Webdev/www/b2/public_html/wp-content/plugins/hwl-blokkendoos/resources/blocks/blocks.css */"./resources/blocks/blocks.css");
 
 
 /***/ })

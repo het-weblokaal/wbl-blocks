@@ -23,13 +23,11 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\block_editor_assets
  */
 function block_assets() {
 
-	// // Styles.
-	// wp_enqueue_style(
-	// 	'ejo-base-blocks',
-	// 	App::get_file_uri( '/blocks/blocks.css' ),
-	// 	array( 'wp-editor' ),
-	// 	filemtime( App::get_dir() . '/assets/css/blocks.css' ) // Version: File modification time.
-	// );
+	// Styles.
+	wp_enqueue_style(
+		'hwl-blokkendoos',
+		Utils::asset( 'blocks/blocks.css' )
+	);
 }
 
 
@@ -41,17 +39,16 @@ function block_editor_assets() {
 	// Scripts.
 	wp_enqueue_script(
 		'hwl-blokkendoos-editor',
-		App::get_file_uri( '/assets/js/blocks.js' ),
+		Utils::asset( 'blocks/blocks.js' ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data', 'wp-components', 'lodash' ),
-		filemtime( App::get_dir() . '/assets/js/blocks.js' ),
+		null,
 		true // Enqueue the script in the footer.
 	);
 
 	// Styles.
 	wp_enqueue_style(
 		'hwl-blokkendoos-editor',
-		App::get_file_uri( '/assets/css/blocks.editor.css' ),
-		array( 'wp-edit-blocks' ),
-		filemtime( App::get_dir() . '/assets/css/blocks.editor.css' )
+		Utils::asset( 'blocks/blocks.editor.css' ),
+		array( 'wp-edit-blocks' )
 	);
 }
