@@ -9,10 +9,8 @@ namespace HWL\Blokkendoos;
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-// // Dynamic Blocks
-// include( App::get_file_path( 'blocks/latest-posts/index.php' ) );
-// include( App::get_file_path( 'blocks/contact-form/index.php' ) );
-// include( App::get_file_path( 'blocks/social-media/index.php' ) );
+// Load dynamic blocks
+include( App::get_src_path( 'blocks/index.php' ) );
 
 // Hook assets
 add_action( 'enqueue_block_assets',        __NAMESPACE__ . '\block_assets' );        // Hook: Frontend+backend assets.
@@ -40,7 +38,15 @@ function block_editor_assets() {
 	wp_enqueue_script(
 		'hwl-blokkendoos-editor',
 		Utils::asset( 'blocks/blocks.js' ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data', 'wp-components', 'lodash' ),
+		[
+			'lodash',
+			'wp-blocks',
+			'wp-components',
+			'wp-data',
+			'wp-editor',
+			'wp-element',
+			'wp-i18n',
+		],
 		null,
 		true // Enqueue the script in the footer.
 	);
@@ -49,6 +55,6 @@ function block_editor_assets() {
 	wp_enqueue_style(
 		'hwl-blokkendoos-editor',
 		Utils::asset( 'blocks/blocks.editor.css' ),
-		array( 'wp-edit-blocks' )
+		[ 'wp-edit-blocks' ]
 	);
 }

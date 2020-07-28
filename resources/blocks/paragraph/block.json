@@ -1,0 +1,22 @@
+{
+	"name": "hwl-blokkendoos/hwl-paragraph",
+	"category": "text",
+	"attributes": {
+		"align": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p",
+			"default": ""
+		},
+		"placeholder": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"lightBlockWrapper": true
+	}
+}

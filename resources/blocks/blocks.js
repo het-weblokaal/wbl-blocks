@@ -10,16 +10,25 @@
  */
 
 /**
+ * External dependancies
+ */
+const { merge } = lodash;
+
+/**
  * WordPress dependencies
  */
-// const { registerBlockType } = wp.blocks;
+const { registerBlockType } = wp.blocks;
 
 /**
  * Import blocks
  */
-// import * as latestPostsBlock from './latest-posts/index';
+import * as postsBlock from './posts/index';
+import * as paragraphBlock from './paragraph/index';
+
+// console.log(paragraphBlock);
 
 /**
  * Register Blocks
  */
-// registerBlockType( latestPostsBlock.name, latestPostsBlock.settings );
+registerBlockType( postsBlock.name, postsBlock.settings );
+registerBlockType( paragraphBlock.name, merge(paragraphBlock.settings, paragraphBlock.metadata) );

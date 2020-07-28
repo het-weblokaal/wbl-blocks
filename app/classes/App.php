@@ -368,6 +368,20 @@ final class App {
 	}
 
 	/**
+	 * Get the src path
+	 *
+	 * @param string $file relative to the src directory
+	 * @return string filepath
+	 */
+	public static function get_src_path( $file ) {
+
+		// Make sure we have a slash at the front of the path.
+		$file = '/' . ltrim( $file, '/' );
+
+		return static::get_file_path( static::get_src_dir() . $file );
+	}
+
+	/**
 	 * Log data to wp-content/debug.log
 	 *
 	 * It doesn't matter if WP_DEBUG is true because I also want to be able

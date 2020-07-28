@@ -1,17 +1,13 @@
 /**
- * Block editor styles
- */
-
-/**
  * Posts block css
  */
 
 .wp-block[data-type="hwl-blokkendoos/posts"] {
 	background-color: #EEEEEE;
-}
 
-.wp-block[data-type="hwl-blokkendoos/posts"] .wp-block-hwl-blokkendoos-posts__block-title {
+	.wp-block-hwl-blokkendoos-posts__block-title {
 		/* margin: 14px 16px;
 		padding-top: 16px;
 		padding-bottom: 16px; */
 	}
+}
