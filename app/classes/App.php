@@ -45,6 +45,20 @@ final class App {
 	private static $version;
 
 	/**
+	 * Public folder (relative to plugin)
+	 *
+	 * @var string
+	 */
+	private static $asset_dir;
+
+	/**
+	 * Src folder (relative to plugin)
+	 *
+	 * @var string
+	 */
+	private static $src_dir;
+
+	/**
 	 * Constructor method.
 	 *
 	 * @return void
@@ -56,14 +70,23 @@ final class App {
 	 *
 	 * @return void
 	 */
-	public static function boot( $file = null, $type = null ) {
+	public static function boot( $args = [] ) {
+
+		$args = wp_parse_args( $args, [
+			'file'      => null,
+			'type'      => null,
+			'asset_dir' => 'public',
+			'src_dir'   => 'resources'
+		] );
 
 		// Set properties
-		static::set_type( $type );
-		static::set_app_file( $file );
+		static::set_type( $args['type'] );
+		static::set_app_file( $args['file'] );
 		static::set_dir();
 		static::set_uri();
 		static::set_version();
+		static::set_asset_dir($args['asset_dir']);
+		static::set_src_dir($args['src_dir']);
 
 		// Bootstrap
 		require_once( static::get_file_path( 'app/bootstrap-autoload.php' ) );
@@ -118,6 +141,25 @@ final class App {
 	public static function get_version() {
 		return static::$version;
 	}
+
+	/**
+	 * Gets the app asset directory name
+	 *
+	 * @return string
+	 */
+	public static function get_asset_dir() {
+		return static::$asset_dir;
+	}
+
+	/**
+	 * Gets the app src directory name
+	 *
+	 * @return string
+	 */
+	public static function get_src_dir() {
+		return static::$src_dir;
+	}
+
 
 
 	/*=============================================================*/
@@ -246,6 +288,32 @@ final class App {
 		}
 	}
 
+	/**
+	 * Sets the app asset directory
+	 *
+	 * @return void
+	 */
+	private static function set_asset_dir( $asset_dir ) {
+
+		// Not leading and trailing slashes
+		$asset_dir = trim($asset_dir, '/');
+
+		static::$asset_dir = $asset_dir;
+	}
+
+	/**
+	 * Sets the app src directory
+	 *
+	 * @return void
+	 */
+	private static function set_src_dir( $src_dir ) {
+
+		// Not leading and trailing slashes
+		$src_dir = trim($src_dir, '/');
+
+		static::$src_dir = $src_dir;
+	}
+
 
 	/*=============================================================*/
 	/**                       Utilities                            */
@@ -269,6 +337,34 @@ final class App {
 	 */
 	public static function get_file_path( $file ) {
 		return static::get_dir() . $file;
+	}
+
+	/**
+	 * Get the asset uri
+	 *
+	 * @param string $file relative to the asset directory
+	 * @return string filepath
+	 */
+	public static function get_asset_uri( $file ) {
+
+		// Make sure we have a slash at the front of the path.
+		$file = '/' . ltrim( $file, '/' );
+
+		return static::get_file_uri( static::get_asset_dir() . $file );
+	}
+
+	/**
+	 * Get the asset path
+	 *
+	 * @param string $file relative to the asset directory
+	 * @return string filepath
+	 */
+	public static function get_asset_path( $file ) {
+
+		// Make sure we have a slash at the front of the path.
+		$file = '/' . ltrim( $file, '/' );
+
+		return static::get_file_path( static::get_asset_dir() . $file );
 	}
 
 	/**

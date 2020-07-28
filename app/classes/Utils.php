@@ -10,13 +10,6 @@ namespace HWL\Blokkendoos;
 final class Utils {
 
 	/**
-	 * Public folder
-	 *
-	 * @var string
-	 */
-	private static $asset_dir = 'public';
-
-	/**
 	 * Laravel mix manifest
 	 *
 	 * @var string
@@ -59,7 +52,7 @@ final class Utils {
 	private static function set_mix_manifest() {
 
 		// Get mix manifest file
-		$manifest = App::get_file_path( static::$asset_dir . '/mix-manifest.json' );
+		$manifest = App::get_asset_path( 'mix-manifest.json' );
 
 		// Get the contents of the manifest
 		$manifest = file_exists( $manifest ) ? json_decode( file_get_contents( $manifest ), true ) : false;
@@ -92,7 +85,7 @@ final class Utils {
 			$file = $manifest[ $file ];
 		}
 
-		return App::get_file_uri( static::$asset_dir . $file );
+		return App::get_asset_uri( $file );
 	}
 
 	/**
