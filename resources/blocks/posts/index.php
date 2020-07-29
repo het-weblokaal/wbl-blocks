@@ -29,8 +29,6 @@ function register_block_posts() {
  */
 function render_block_posts( $attributes = [] ) {
 
-	App::log('render_block_posts');
-
 	// return render_posts();
 	return '<h2>HWL Blokkendoos - Posts</h2>';
 }

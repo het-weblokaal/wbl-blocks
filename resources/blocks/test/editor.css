@@ -1,11 +1,7 @@
 /**
- * Block styles
- */
-
-/**
  * Test block editor css
  */
 
-.wp-block-hwl-blokkendoos-test {
+.wp-block[data-type="hwl-blokkendoos/test"] {
 	background-color: #EEEEEE;
 }

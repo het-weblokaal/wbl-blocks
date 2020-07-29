@@ -23,12 +23,12 @@ const { registerBlockType } = wp.blocks;
  * Import blocks
  */
 import * as postsBlock from './posts/index';
-import * as paragraphBlock from './paragraph/index';
-
-// console.log(paragraphBlock);
+// import * as paragraphBlock from './paragraph/index';
+import * as testBlock from './test/index';
 
 /**
  * Register Blocks
  */
 registerBlockType( postsBlock.name, postsBlock.settings );
-registerBlockType( paragraphBlock.name, paragraphBlock.settings );
+// registerBlockType( paragraphBlock.name, paragraphBlock.settings );
+registerBlockType( testBlock.name, testBlock.settings );
