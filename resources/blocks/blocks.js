@@ -31,4 +31,4 @@ import * as paragraphBlock from './paragraph/index';
  * Register Blocks
  */
 registerBlockType( postsBlock.name, postsBlock.settings );
-registerBlockType( paragraphBlock.name, merge(paragraphBlock.settings, paragraphBlock.metadata) );
+registerBlockType( paragraphBlock.name, paragraphBlock.settings );

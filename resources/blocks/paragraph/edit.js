@@ -14,7 +14,7 @@ const {
 	RichText,
 } = wp.blockEditor;
 
-function ParagraphBlock( {
+export default function edit( {
 	attributes,
 	className,
 	setAttributes
@@ -34,15 +34,17 @@ function ParagraphBlock( {
 			</BlockControls>
 			<RichText
 				identifier="content"
-				className={ className }
-				tagName={ "p" }
+				tagName={ 'p' }
 				value={ content }
 				onChange={ ( newContent ) =>
 					setAttributes( { content: newContent } )
+				}
+				className={ className }
+				placeholder={
+					placeholder ||
+					__( 'Start writing or type / to choose a block', 'hwl-blokkendoos' )
 				}
 			/>
 		</>
 	);
 };
-
-export default ParagraphBlock;

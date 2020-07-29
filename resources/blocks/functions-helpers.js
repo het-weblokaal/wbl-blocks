@@ -37,44 +37,48 @@ export function getImageSrc( media, size ) {
 	return imageSrc;
 }
 
+// export function buildClassNames() {
+
+// }
+
 /*!
   Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
 */
 
-var hasOwn = {}.hasOwnProperty;
+// var hasOwn = {}.hasOwnProperty;
 
-export function classNames() {
-	var classes = [];
+// export function classNames() {
+// 	var classes = [];
 
-	for (var i = 0; i < arguments.length; i++) {
-		var arg = arguments[i];
-		if (!arg) continue;
+// 	for (var i = 0; i < arguments.length; i++) {
+// 		var arg = arguments[i];
+// 		if (!arg) continue;
 
-		var argType = typeof arg;
+// 		var argType = typeof arg;
 
-		if (argType === 'string' || argType === 'number') {
-			classes.push(arg);
-		} else if (Array.isArray(arg)) {
-			if(arg.length) {
-				var inner = classNames.apply(null, arg);
-				if (inner) {
-					classes.push(inner);
-				}
-			}
-		} else if (argType === 'object') {
-			if (arg.toString !== Object.prototype.toString) {
-				classes.push(arg.toString());
-			} else {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-	}
+// 		if (argType === 'string' || argType === 'number') {
+// 			classes.push(arg);
+// 		} else if (Array.isArray(arg)) {
+// 			if(arg.length) {
+// 				var inner = classNames.apply(null, arg);
+// 				if (inner) {
+// 					classes.push(inner);
+// 				}
+// 			}
+// 		} else if (argType === 'object') {
+// 			if (arg.toString !== Object.prototype.toString) {
+// 				classes.push(arg.toString());
+// 			} else {
+// 				for (var key in arg) {
+// 					if (hasOwn.call(arg, key) && arg[key]) {
+// 						classes.push(key);
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
 
-	return classes.join(' ');
-}
+// 	return classes.join(' ');
+// }
