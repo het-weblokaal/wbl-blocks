@@ -17,9 +17,9 @@ export default function edit( { attributes, setAttributes, className } ) {
 
     return (
         <div className={ className }>
-        	<div className={ `{$className}__inner` }>
+        	<div className={ `${className}__inner` }>
             	<RichText
-					className={ `{$className}__content` }
+					className={ `${className}__content` }
 					tagName="div"
                 	multiline="p"
 					value={ content }

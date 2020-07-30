@@ -1,31 +1,21 @@
 /**
- * WordPress dependencies
+ * External dependancies
  */
-const { __ } = wp.i18n;
+const { merge } = lodash;
 
 // Imports
+import metadata from './block.json';
 import edit from './edit';
 import save from './save';
 
-// Exports
-export const name = 'hwl-blokkendoos/test';
-export const settings = {
-	title: __( 'Test', 'hwl-blokkendoos' ),
-	icon: 'megaphone',
-	category: 'common',
-	keywords: [
-		__( 'Test', 'hwl-blokkendoos' ),
-	],
-	supports: {
-		multiple: false,
-	},
-	attributes: {
-		content: {
-			source: 'children',
-			selector: `.wp-block-hwl-blokkendoos-test__content`,
-			default: false
-		},
-	},
+// Get name from metadata
+const { name } = metadata;
+
+// Merge the metadata with the edit and save functions
+const settings = merge(metadata, {
 	edit: edit,
 	save: save
-};
+});
+
+// Export
+export { name, settings };

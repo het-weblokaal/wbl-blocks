@@ -10,11 +10,6 @@
  */
 
 /**
- * External dependancies
- */
-const { merge } = lodash;
-
-/**
  * WordPress dependencies
  */
 const { registerBlockType } = wp.blocks;
