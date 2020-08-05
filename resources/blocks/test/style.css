@@ -3,5 +3,6 @@
  */
 
 .wp-block-hwl-blokkendoos-test {
-	background-color: #EEEEEE;
+	background-color: var(--wp--preset--color--secondary-1);
+	color: var(--wp--preset--color--primary-1);
 }

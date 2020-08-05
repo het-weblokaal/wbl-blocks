@@ -20,6 +20,6 @@
  * Test block editor css
  */
 
-.wp-block[data-type="hwl-blokkendoos/test"] {
-	background-color: #EEEEEE;
+.wp-block-hwl-blokkendoos-test {
+	/* background-color: red; */
 }
