@@ -1,4 +1,4 @@
-<article class="post-plural <?= $post_classes ?>">
+<article class="post-plural">
 
 	<header class="post-plural__header">
 		<h2 class="post-plural__title">

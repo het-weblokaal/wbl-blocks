@@ -62,39 +62,15 @@ function render_posts() {
  */
 function render_posts_archive() {
 
+	$template = 'posts-loop';
+
 	ob_start();
 
-	?>
-	<section class="posts">
+	// Run template or fallback to default plugin template
+	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
+		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+	}
 
-		<?php if ( have_posts() ) : ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php echo render_posts_post(); ?>
-
-			<?php endwhile; ?>
-
-			<?php echo render_posts_pagination(); ?>
-
-		<?php else : ?>
-
-			<p><?= __('No results', 'hwl-wbl') ?></p>
-
-		<?php endif; ?>
-
-	</section>
-	<?php
-
-	/**
-	 * I encounter a ghost paragraph weirdly...
-	 *
-	 * Haven't found a good solution. Just hide it through css.
-	 * Edit: probably due to wp_autop
-	 *
-	 * @link https://stackoverflow.com/questions/34371275/php-output-buffering-with-template-file-results-in-line-breaks-and-empty-paragra
-	 * @link https://github.com/WordPress/gutenberg/issues/12646
-	 */
 	return ob_get_clean();
 }
 
@@ -106,57 +82,27 @@ function render_posts_archive() {
  */
 function render_posts_custom( $args = null ) {
 
-	$args = [
-		'post_type' => 'post',
-		'posts_per_page' => 3,
-	];
-
-	if ( ! $args ) {
-		return '';
-	}
-
-	// Setup the query
-	$custom_query = new \WP_Query( $args );
-
-	// Keep track of date
-	$date = '';
+	$template = 'posts-loop-custom';
 
 	ob_start();
-	?>
-	<section class="posts">
-		<?php
-		if ($custom_query->have_posts()) {
-			while ( $custom_query->have_posts() ) {
-				$custom_query->the_post();
 
-				echo render_posts_post();
-
-				wp_reset_postdata();
-			}
-		} else {
-			echo '<p>' . __('No results', 'hwl-wbl') . '</p>';
-		}
-
-		?>
-	</section>
-	<?php
+	// Run template or fallback to default plugin template
+	if ( false === get_template_part( get_posts_template_for_themes( $template ), null, $args ) ) {
+		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+	}
 
 	return ob_get_clean();
 }
 
 function render_posts_post() {
 
+	$template = 'posts-post';
+
 	ob_start();
 
-	$template = apply_filters( 'hwl-blokkendoos/posts/post-template', 'posts-post' );
-
-	$run_template = get_template_part( $template );
-
-	/**
-	 * If template is not found in theme, fallback to default plugin template
-	 */
-	if ( ! $run_template ) {
-		load_template( App::get_src_path( 'blocks/posts/posts-post.php' ), false );
+	// Run template or fallback to default plugin template
+	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
+		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
 	}
 
 	return ob_get_clean();
@@ -164,11 +110,30 @@ function render_posts_post() {
 
 function render_posts_pagination() {
 
-	return get_the_posts_pagination([
-	    'mid_size'           => 1,
-	    'prev_text'          => _x( 'Previous', 'previous set of posts' ),
-	    'next_text'          => _x( 'Next', 'next set of posts' ),
-	    'screen_reader_text' => sprintf( __( '%s navigation', 'hwl-wbl' ), __( 'Posts' ) ),
-	    'aria_label'         => __( 'Posts' ),
-	]);
+	$template = 'posts-pagination';
+
+	ob_start();
+
+	// Run template or fallback to default plugin template
+	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
+		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+	}
+
+	return ob_get_clean();
+}
+
+/**
+ * Get the posts template for themes to use
+ *
+ * @param 	string $template
+ * @return 	string relative theme path
+ */
+function get_posts_template_for_themes( $template ) {
+
+	$template_dir = apply_filters( 'hwl-blokkendoos/posts/templates/directory', '' );
+	$template_dir = $template_dir ? trailingslashit($template_dir) : '';
+
+	$template = apply_filters( "hwl-blokkendoos/posts/templates/{$template}", $template );
+
+	return $template_dir . $template;
 }
