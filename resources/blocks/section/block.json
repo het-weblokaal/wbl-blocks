@@ -1,0 +1,27 @@
+{
+	"name": "hwl-blokkendoos/section",
+	"title": "Section",
+	"category": "layout",
+	"icon": "table-row-after",
+	"description": "Section block",
+	"keywords": [ "Section", "Sectie", "Semantic", "Group", "Groep" ],
+	"textdomain": "hwl-blokkendoos",
+	"attributes": {
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		}
+	},
+	"supports": {
+		"align": false,
+		"alignWide": false,
+		"defaultStylePicker": false,
+		"customClassName": true,
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"content": "<Section/>"
+		}
+	}
+}
