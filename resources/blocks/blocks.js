@@ -20,6 +20,7 @@ const { registerBlockType } = wp.blocks;
 import * as postsBlock from './posts/index';
 // import * as paragraphBlock from './paragraph/index';
 import * as testBlock from './test/index';
+import * as sectionBlock from './section/index';
 
 /**
  * Register Blocks
@@ -27,3 +28,4 @@ import * as testBlock from './test/index';
 registerBlockType( postsBlock.name, postsBlock.settings );
 // registerBlockType( paragraphBlock.name, paragraphBlock.settings );
 registerBlockType( testBlock.name, testBlock.settings );
+registerBlockType( sectionBlock.name, sectionBlock.settings );

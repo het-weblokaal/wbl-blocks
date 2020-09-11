@@ -5,25 +5,20 @@
 /**
  * WordPress dependencies
  */
-const { RichText } = wp.blockEditor;
-const { getBlockDefaultClassName } = wp.blocks;
+const { InnerBlocks } = wp.blockEditor;
 
 /**
  * Save function
  */
 export default function save( { attributes } ) {
-
-	// Extract variables
-	const { content } = attributes;
-
-	// Get className (https://github.com/WordPress/gutenberg/issues/7308#issuecomment-439946166)
-	const className = getBlockDefaultClassName( 'hwl-blokkendoos/test' );
+	const { tagName: Tag } = attributes;
 
 	return (
-		<div className={ className }>
-			<div className={ `${className}__inner` }>
-				<RichText.Content className={ `${className}__content` } tagName="div" value={ content } />
+		<Tag>
+			<div className="wp-block-wbl-section__inner">
+				<InnerBlocks.Content />
 			</div>
-		</div>
+		</Tag>
 	);
-};
+}
+

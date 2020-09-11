@@ -1,5 +1,5 @@
 {
-	"name": "hwl-blokkendoos/section",
+	"name": "wbl/section",
 	"title": "Section",
 	"category": "layout",
 	"icon": "table-row-after",
@@ -13,11 +13,13 @@
 		}
 	},
 	"supports": {
-		"align": false,
-		"alignWide": false,
-		"defaultStylePicker": false,
-		"customClassName": true,
-		"html": false
+		"align"              : false,
+		"alignWide"          : false,
+		"anchor"             : true,
+		"customClassName"    : true,
+		"defaultStylePicker" : false,
+		"html"               : false,
+		"lightBlockWrapper"  : true
 	},
 	"example": {
 		"attributes": {

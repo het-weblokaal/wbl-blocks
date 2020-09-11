@@ -2,7 +2,6 @@
  * Test block editor css
  */
 
-.wp-block-hwl-blokkendoos-test {
-	background-color: var(--wp--preset--color--secondary-1);
-	color: var(--wp--preset--color--primary-1);
+.wp-block-wbl-section {
+	background-color: yellow;
 }

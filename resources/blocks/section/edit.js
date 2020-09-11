@@ -5,30 +5,23 @@
 /**
  * WordPress dependencies
  */
-const { RichText } = wp.blockEditor;
+const { InnerBlocks } = wp.blockEditor;
 const { __ } = wp.i18n;
 
 /**
  * Edit function
  */
-export default function edit( { attributes, setAttributes, className } ) {
+function SectionEdit( { attributes, setAttributes, className, clientId } ) {
 
-	const { content } = attributes;
+	console.log(className);
 
-    return (
-        <div className={ className }>
+	return (
+		<div className={ `${className}` }>
         	<div className={ `${className}__inner` }>
-            	<RichText
-					className={ `${className}__content` }
-					tagName="div"
-                	multiline="p"
-					value={ content }
-					onChange={ ( content ) => { setAttributes( { content } ) } }
-					placeholder={ __( 'Test', 'hwl-blokkendoos' ) }
-					keepPlaceholderOnFocus={true}
-				/>
-            </div>
-        </div>
-    );
-};
+				<InnerBlocks />
+			</div>
+		</div>
+	);
+}
 
+export default SectionEdit;
