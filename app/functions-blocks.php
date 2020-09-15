@@ -136,7 +136,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
     	'hwl-blokkendoos/section',
 		'hwl-blokkendoos/posts',
 		'hwl-blokkendoos/test',
-    ]);
+    ], $post);
 
     $allowed_blocks = array_merge($core_blocks, $extra_blocks);
 
