@@ -12,7 +12,7 @@ if ( ! $args ) {
 $custom_query = new \WP_Query( $args );
 
 ?>
-<section class="posts">
+<div class="posts">
 
 	<?php if ($custom_query->have_posts()) : ?>
 
@@ -30,4 +30,4 @@ $custom_query = new \WP_Query( $args );
 
 	<?php endif; ?>
 
-</section>
+</div>

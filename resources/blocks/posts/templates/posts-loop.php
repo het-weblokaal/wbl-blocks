@@ -1,4 +1,4 @@
-<section class="posts">
+<div class="posts">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -16,4 +16,4 @@
 
 	<?php endif; ?>
 
-</section>
+</div>
