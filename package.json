@@ -1,5 +1,5 @@
 {
-	"name": "hwl-blokkendoos",
+	"name": "wbl-blocks",
 	"version": "0.0.1",
 	"description": "Een pakket met WordPress blokken. Brengt ook verdere instellingen met zich mee.",
 	"author": "Het Weblokaal <erik@hetweblokaal.nl>",
@@ -18,10 +18,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/erikjoling/hwl-blokkendoos.git"
+		"url": "git+https://github.com/erikjoling/wbl-blocks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/erikjoling/hwl-blokkendoos/issues"
+		"url": "https://github.com/erikjoling/wbl-blocks/issues"
 	},
 	"devDependencies": {
 		"@babel/preset-react": "^7.9.4",

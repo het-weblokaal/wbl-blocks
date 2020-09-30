@@ -1,32 +1,21 @@
 /**
- * WordPress dependencies
+ * External dependancies
  */
-const { __ } = wp.i18n;
+const { merge } = lodash;
 
 // Imports
+import metadata from './block.json';
 import edit from './edit';
+import save from './save';
 
-// Exports
-export const name = 'hwl-blokkendoos/posts';
-export const settings = {
-	title: __( 'Berichten', 'hwl-blokkendoos' ),
-	icon: 'excerpt-view',
-	category: 'common',
-	keywords: [
-		__( 'Berichten', 'hwl-blokkendoos' ),
-		__( 'Posts', 'hwl-blokkendoos' ),
-		__( 'Blog', 'hwl-blokkendoos' ),
-	],
+// Get name from metadata
+const { name } = metadata;
 
-	supports: {
-		multiple: false,
-	},
-	attributes: {},
+// Merge the metadata with the edit and save functions
+const settings = merge(metadata, {
 	edit: edit,
-	save: () => {
-        return null;
-    },
-};
+	save: save
+});
 
-
-
+// Export
+export { name, settings };

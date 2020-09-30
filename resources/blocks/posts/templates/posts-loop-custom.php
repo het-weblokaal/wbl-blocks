@@ -18,7 +18,7 @@ $custom_query = new \WP_Query( $args );
 
 		<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-			<?php echo \HWL\Blokkendoos\render_posts_post(); ?>
+			<?php echo \WBL\Blocks\render_posts_post(); ?>
 
 			<?php wp_reset_postdata(); ?>
 
@@ -26,7 +26,7 @@ $custom_query = new \WP_Query( $args );
 
 	<?php else : ?>
 
-		<p><?= __('No results', 'hwl-wbl') ?></p>
+		<p><?= __('No results', 'wbl-blocks') ?></p>
 
 	<?php endif; ?>
 

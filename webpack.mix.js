@@ -8,7 +8,7 @@
  * @link https://laravel-mix.com/docs/5.0/installation
  * @link https://laravel.com/docs/5.6/mix
  *
- * @package   HWL\Blokkendoos
+ * @package   WBL\Blocks
  * @author    Erik Joling <erik@hetweblokaal.nl>
  * @copyright 2020 Erik Joling
  * @link      https://www.hetweblokaal.nl/

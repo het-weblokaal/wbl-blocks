@@ -1,16 +1,16 @@
 {
-	"name": "hwl-blokkendoos/test",
+	"name": "wbl-blocks/test",
 	"title": "Test",
 	"category": "text",
 	"icon": "star-filled",
 	"description": "Testblok…",
 	"keywords": [ "Test" ],
-	"textdomain": "hwl-blokkendoos",
+	"textdomain": "wbl-blocks",
 	"attributes": {
 		"content": {
 			"type": "string",
 			"source": "html",
-			"selector": ".wp-block-hwl-blokkendoos-test__content"
+			"selector": ".wbl-block-test__content"
 		}
 	},
 	"supports": {

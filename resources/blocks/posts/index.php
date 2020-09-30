@@ -3,7 +3,7 @@
  * Posts
  */
 
-namespace HWL\Blokkendoos;
+namespace WBL\Blocks;
 
 // Register blocks
 add_action( 'init', __NAMESPACE__ . '\register_block_posts' );
@@ -13,7 +13,7 @@ add_action( 'init', __NAMESPACE__ . '\register_block_posts' );
  */
 function register_block_posts() {
 	register_block_type(
-		'hwl-blokkendoos/posts',
+		'wbl-blocks/posts',
 		[
 			'attributes'      => [],
 			'render_callback' => __NAMESPACE__ . '\render_block_posts',
@@ -130,10 +130,10 @@ function render_posts_pagination() {
  */
 function get_posts_template_for_themes( $template ) {
 
-	$template_dir = apply_filters( 'hwl-blokkendoos/posts/templates/directory', '' );
+	$template_dir = apply_filters( 'wbl-blocks/templates/directory', '' );
 	$template_dir = $template_dir ? trailingslashit($template_dir) : '';
 
-	$template = apply_filters( "hwl-blokkendoos/posts/templates/{$template}", $template );
+	$template = apply_filters( "wbl-blocks/templates/{$template}", $template );
 
 	return $template_dir . $template;
 }

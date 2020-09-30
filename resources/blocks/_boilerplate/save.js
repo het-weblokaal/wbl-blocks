@@ -17,7 +17,7 @@ export default function save( { attributes } ) {
 	const { content } = attributes;
 
 	// Get className (https://github.com/WordPress/gutenberg/issues/7308#issuecomment-439946166)
-	const className = getBlockDefaultClassName( 'hwl-blokkendoos/test' );
+	const className = getBlockDefaultClassName( 'wbl-blocks/test' );
 
 	return (
 		<div className={ className }>

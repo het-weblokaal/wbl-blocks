@@ -6,13 +6,13 @@
  * to run. Classes utilize the PSR-4 autoloader in Composer which is defined in
  * `composer.json`.
  *
- * @package   HWL\Dorgelo
+ * @package   WBL\Blocks
  * @author    Erik Joling <erik.info@hetweblokaal.nl>
  * @copyright 2020 Het Weblokaal
  * @link      https://www.hetweblokaal.nl/
  */
 
-namespace HWL\Blokkendoos;
+namespace WBL\Blocks;
 
 
 # ------------------------------------------------------------------------------

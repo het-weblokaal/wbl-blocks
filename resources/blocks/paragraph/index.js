@@ -1,56 +1,21 @@
 /**
- * WordPress dependencies
+ * External dependancies
  */
-const { __ } = wp.i18n;
+const { merge } = lodash;
 
 // Imports
+import metadata from './block.json';
 import edit from './edit';
 import save from './save';
-// import metadata from './block.json';
 
-// // Get name from metadata
-// const { name } = metadata;
+// Get name from metadata
+const { name } = metadata;
 
-// // Export metadata and name
-// export { metadata, name };
-
-export const name = "hwl-blokkendoos/hwl-paragraph";
-// Export settings
-export const settings = {
-	title: __( 'HWL Paragraaf', 'hwl-blokkendoos' ),
-	icon: 'editor-paragraph',
-	keywords: [
-		__( 'Text', 'hwl-blokkendoos' ),
-	],
-	example: {
-		attributes: {
-			content: __(
-				'In a village of La Mancha, the name of which I have no desire to call to mind, there lived not long since one of those gentlemen that keep a lance in the lance-rack, an old buckler, a lean hack, and a greyhound for coursing.'
-			)
-		},
-	},
-	category: "text",
-	attributes: {
-		align: {
-			type: "string"
-		},
-		content: {
-			type: "string",
-			source: "html",
-			selector: "p",
-			default: ""
-		},
-		placeholder: {
-			type: "string"
-		}
-	},
-	supports: {
-		anchor: true,
-		lightBlockWrapper: true
-	},
+// Merge the metadata with the edit and save functions
+const settings = merge(metadata, {
 	edit: edit,
-	edit: save,
-};
+	save: save
+});
 
-
-
+// Export
+export { name, settings };

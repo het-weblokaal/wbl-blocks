@@ -24,7 +24,7 @@ export default function edit( { attributes, setAttributes, className } ) {
                 	multiline="p"
 					value={ content }
 					onChange={ ( content ) => { setAttributes( { content } ) } }
-					placeholder={ __( 'Test', 'hwl-blokkendoos' ) }
+					placeholder={ __( 'Test', 'wbl-blocks' ) }
 					keepPlaceholderOnFocus={true}
 				/>
             </div>

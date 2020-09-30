@@ -5,7 +5,7 @@
  * Enqueue CSS/JS of all the blocks.
  */
 
-namespace HWL\Blokkendoos;
+namespace WBL\Blocks;
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
@@ -25,7 +25,7 @@ function block_assets() {
 
 	// Styles.
 	wp_enqueue_style(
-		'hwl-blokkendoos',
+		'wbl-blocks',
 		Utils::asset( 'blocks/blocks.css' )
 	);
 }
@@ -38,7 +38,7 @@ function block_editor_assets() {
 
 	// Scripts.
 	wp_enqueue_script(
-		'hwl-blokkendoos-editor',
+		'wbl-blocks-editor',
 		Utils::asset( 'blocks/blocks.js' ),
 		[
 			'lodash',
@@ -56,9 +56,9 @@ function block_editor_assets() {
 	// Styles
 	// By depending on frontend-style the editor style is later in the cascade
 	wp_enqueue_style(
-		'hwl-blokkendoos-editor',
+		'wbl-blocks-editor',
 		Utils::asset( 'blocks/blocks.editor.css' ),
-		array( 'wp-edit-blocks', 'hwl-blokkendoos' )
+		array( 'wp-edit-blocks', 'wbl-blocks' )
 	);
 }
 
@@ -132,15 +132,15 @@ function allowed_block_types( $allowed_blocks, $post ) {
 		'core/widget-area',
     ];
 
-    $extra_blocks = \apply_filters( 'hwl-blokkendoos/extra_blocks', [
-    	'hwl-blokkendoos/section',
-		'hwl-blokkendoos/posts',
-		'hwl-blokkendoos/test',
+    $extra_blocks = \apply_filters( 'wbl-blocks/extra_blocks', [
+    	'wbl-blocks/section',
+		'wbl-blocks/posts',
+		'wbl-blocks/test',
     ], $post);
 
     $allowed_blocks = array_merge($core_blocks, $extra_blocks);
 
-    $disallowed_blocks = \apply_filters( 'hwl-blokkendoos/disallowed_blocks', [
+    $disallowed_blocks = \apply_filters( 'wbl-blocks/disallowed_blocks', [
 		'core/archives',
 		'core/calendar',
 		'core/categories',

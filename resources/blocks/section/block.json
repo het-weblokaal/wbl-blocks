@@ -1,11 +1,11 @@
 {
-	"name": "wbl/section",
+	"name": "wbl-blocks/section",
 	"title": "Section",
 	"category": "layout",
 	"icon": "table-row-after",
 	"description": "Section block",
 	"keywords": [ "Section", "Sectie", "Semantic", "Group", "Groep" ],
-	"textdomain": "hwl-blokkendoos",
+	"textdomain": "wbl-blocks",
 	"attributes": {
 		"tagName": {
 			"type": "string",
@@ -20,10 +20,5 @@
 		"defaultStylePicker" : false,
 		"html"               : false,
 		"lightBlockWrapper"  : true
-	},
-	"example": {
-		"attributes": {
-			"content": "<Section/>"
-		}
 	}
 }

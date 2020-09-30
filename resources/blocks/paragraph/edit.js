@@ -1,8 +1,6 @@
 /**
  * Internal dependencies
  */
-// import { classNames } from '../functions-helpers.js';
-// const classnames = classnames;
 
 /**
  * WordPress dependencies
@@ -42,7 +40,7 @@ export default function edit( {
 				className={ className }
 				placeholder={
 					placeholder ||
-					__( 'Start writing or type / to choose a block', 'hwl-blokkendoos' )
+					__( 'Start writing or type / to choose a block', 'wbl-blocks' )
 				}
 			/>
 		</>

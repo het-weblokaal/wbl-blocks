@@ -1,0 +1,14 @@
+{
+	"name": "wbl-blocks/posts",
+	"title": "Berichten",
+	"description": "Displays latest posts",
+	"category": "common",
+	"icon": "excerpt-view",
+	"keywords": [ "Berichten", "Posts",	"Blog" ],
+	"textdomain": "wbl-blocks",
+
+	"supports": {
+		"multiple": false
+	},
+	"attributes": {}
+}

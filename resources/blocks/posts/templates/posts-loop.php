@@ -4,15 +4,15 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php echo \HWL\Blokkendoos\render_posts_post(); ?>
+			<?php echo \WBL\Blocks\render_posts_post(); ?>
 
 		<?php endwhile; ?>
 
-		<?php echo \HWL\Blokkendoos\render_posts_pagination(); ?>
+		<?php echo \WBL\Blocks\render_posts_pagination(); ?>
 
 	<?php else : ?>
 
-		<p><?= __('No results', 'hwl-wbl') ?></p>
+		<p><?= __('No results', 'wbl-blocks') ?></p>
 
 	<?php endif; ?>
 

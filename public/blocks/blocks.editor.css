@@ -6,15 +6,21 @@
  * Posts block css
  */
 
-.wp-block[data-type="hwl-blokkendoos/posts"] {
+.wp-block[data-type="wbl-blocks/posts"] {
 	background-color: rgba(0,0,0,0.1);
 	padding: 16px 24px;
 }
 
-.wp-block[data-type="hwl-blokkendoos/posts"] .wp-block-hwl-blokkendoos-posts__block-title {
+.wp-block[data-type="wbl-blocks/posts"] .wbl-block-posts__title {
 		opacity: 0.5;
 		font-family: inherit;
 		font-size: 1.5rem;
+		text-align: center;
+	}
+
+.wp-block[data-type="wbl-blocks/posts"] .wbl-block-posts__text {
+		margin-top: 0;
+		opacity: 0.5;
 		text-align: center;
 	}
 
@@ -22,7 +28,7 @@
  * Test block editor css
  */
 
-.wp-block-hwl-blokkendoos-test {
+.wbl-block-test {
 	/* background-color: red; */
 }
 

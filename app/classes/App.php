@@ -1,6 +1,6 @@
 <?php
 
-namespace HWL\Blokkendoos;
+namespace WBL\Blocks;
 
 /**
  * App Class
