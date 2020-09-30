@@ -130,10 +130,10 @@ function render_posts_pagination() {
  */
 function get_posts_template_for_themes( $template ) {
 
-	$template_dir = apply_filters( 'wbl-blocks/templates/directory', '' );
+	$template_dir = apply_filters( 'wbl-blocks/posts/templates/directory', '' );
 	$template_dir = $template_dir ? trailingslashit($template_dir) : '';
 
-	$template = apply_filters( "wbl-blocks/templates/{$template}", $template );
+	$template = apply_filters( "wbl-blocks/posts/templates/{$template}", $template );
 
 	return $template_dir . $template;
 }
