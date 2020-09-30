@@ -12,13 +12,9 @@ add_action( 'init', __NAMESPACE__ . '\register_block_posts' );
  * Registers the Posts block.
  */
 function register_block_posts() {
-	register_block_type(
-		'wbl-blocks/posts',
-		[
-			'attributes'      => [],
-			'render_callback' => __NAMESPACE__ . '\render_block_posts',
-		]
-	);
+	register_block_type_from_metadata( App::get_src_path( "blocks/posts/"), [
+		'render_callback' => __NAMESPACE__ . '\render_block_posts',
+	] );
 }
 
 /**
@@ -27,10 +23,18 @@ function register_block_posts() {
  * @param array $attributes The block attributes.
  * @return string
  */
-function render_block_posts( $attributes = [] ) {
+function render_block_posts( $attributes ) {
+
+	$args = array(
+		'posts_per_page'   => $attributes['postsToShow'],
+		// 'post_status'      => 'publish',
+		// 'order'            => $attributes['order'],
+		// 'orderby'          => $attributes['orderBy'],
+		// 'suppress_filters' => false,
+	);
 
 	// return '<h2>HWL Blokkendoos - Posts</h2>';
-	return render_posts();
+	return render_posts( $args );
 }
 
 /**
@@ -38,7 +42,7 @@ function render_block_posts( $attributes = [] ) {
  *
  * @return string
  */
-function render_posts() {
+function render_posts( $args ) {
 	$output = '';
 
 	if (is_search()) {
@@ -48,7 +52,7 @@ function render_posts() {
 		$output = render_posts_archive();
 	}
 	else {
-		$output = render_posts_custom();
+		$output = render_posts_custom($args);
 	}
 
 	return $output;
@@ -88,7 +92,7 @@ function render_posts_custom( $args = null ) {
 
 	// Run template or fallback to default plugin template
 	if ( false === get_template_part( get_posts_template_for_themes( $template ), null, $args ) ) {
-		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false, $args );
 	}
 
 	return ob_get_clean();

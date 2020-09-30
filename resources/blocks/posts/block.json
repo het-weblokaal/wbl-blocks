@@ -10,5 +10,10 @@
 	"supports": {
 		"multiple": false
 	},
-	"attributes": {}
+	"attributes": {
+		"postsToShow": {
+			"type": "number",
+			"default": 5
+		}
+	}
 }

@@ -1,12 +1,8 @@
 <?php
-$args = [
+$args = wp_parse_args( $args, [
 	'post_type' => 'post',
 	'posts_per_page' => 3,
-];
-
-if ( ! $args ) {
-	return;
-}
+]);
 
 // Setup the query
 $custom_query = new \WP_Query( $args );
