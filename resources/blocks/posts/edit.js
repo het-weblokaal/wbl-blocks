@@ -23,7 +23,8 @@ function edit( { attributes, setAttributes } ) {
     		<InspectorControls>
 				<PanelBody title={ __( 'Settings', 'wbl-blocks' ) }>
 		    		<RangeControl
-						label={ __( 'Aantal posts' ) }
+						label={ __( 'Aantal posts', 'wbl-blocks' ) }
+						help={ __( 'Op de archiefpagina wordt het gekozen aantal overschreven door de algemene instellingen.', 'wbl-blocks' ) }
 						value={ postsToShow }
 						onChange={ ( value ) =>	setAttributes( { postsToShow: value } )	}
 						min={ 1 }
