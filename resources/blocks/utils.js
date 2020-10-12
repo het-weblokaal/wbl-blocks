@@ -8,8 +8,31 @@ const { has } = lodash;
  *
  * @return string
  */
+export function getImage( media, size ) {
+
+	return {
+		id: getImageId(media),
+		src: getImageSrc(media,size),
+		size: size
+	};
+}
+
+/**
+ * Get the source url of an image
+ *
+ * @return string
+ */
+export function getImageId( media ) {
+	return media.id ?? undefined;
+}
+
+/**
+ * Get the source url of an image
+ *
+ * @return string
+ */
 export function getImageSrc( media, size ) {
-	let imageSrc = '';
+	let src = '';
 
 	size = size || 'thumbnail';
 
@@ -20,21 +43,21 @@ export function getImageSrc( media, size ) {
 		// - Media with direct properties and url
 		if ( has( media, [ 'media_details' ] ) ) {
 			if ( has( media, [ 'media_details', 'sizes', size ] ) ) {
-				imageSrc = media.media_details.sizes[ size ].source_url;
+				src = media.media_details.sizes[ size ].source_url;
 			} else {
-				imageSrc = media.source_url;
+				src = media.source_url;
 			}
 		}
 		else {
 			if ( has( media, [ 'sizes', size ] ) ) {
-				imageSrc = media.sizes[ size ].url;
+				src = media.sizes[ size ].url;
 			} else {
-				imageSrc = media.url;
+				src = media.url;
 			}
 		}
 	}
 
-	return imageSrc;
+	return src;
 }
 
 // export function buildClassNames() {
