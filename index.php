@@ -4,7 +4,7 @@
  * Plugin URI:   https://github.com/erikjoling/wbl-blocks
  * Description:  Een pakket met WordPress blokken. Brengt ook verdere instellingen met zich mee.
  * Version:      0.1
- * Author:       Author: Het Weblokaal <erik@hetweblokaal.nl>
+ * Author:       Author: Het Weblokaal <erik.info@hetweblokaal.nl>
  * Author URI:   https://www.hetweblokaal.nl/
  * Text Domain:  wbl-blocks
  * Domain Path:  /resources/languages
@@ -17,10 +17,22 @@
 
 namespace WBL\Blocks;
 
-defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-// Load the App class
-require_once( __DIR__ . '/app/classes/App.php' );
+# ------------------------------------------------------------------------------
+# Load Dependencies
+# ------------------------------------------------------------------------------
 
-// Boot the app
-App::boot();
+/**
+ * App Class
+ */
+if ( file_exists( __DIR__ . '/vendor/wbl-app.php' ) ) {
+	require_once( __DIR__ . '/vendor/wbl-app.php' );
+}
+else {
+	exit;
+}
+
