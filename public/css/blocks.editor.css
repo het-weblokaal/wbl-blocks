@@ -1,0 +1,28 @@
+/**
+ * Block editor styles
+ */
+
+/* @import "posts/editor.css"; */
+
+/* @import "test/editor.css"; */
+
+/**
+ * Two Column Content block editor css
+ *
+ * Only use this for basic styles
+ */
+
+[data-type="wbl/segment"] {
+
+}
+
+.wbl-segment__inner {
+
+	}
+
+/**
+ * wbl Container
+ */
+
+.wbl-container {
+}

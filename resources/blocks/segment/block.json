@@ -1,0 +1,54 @@
+{
+	"apiVersion": 2,
+	"name": "wbl/segment",
+	"title": "Segment",
+	"category": "layout",
+	"icon": "editor-table",
+	"description": "Layoutstructure",
+	"keywords": [ "Segment", "Container", "Section" ],
+	"textdomain": "wbl",
+	"attributes": {
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wbl-segment__title",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "string",
+			"default": "2"
+		},
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		},
+		"variation": {
+			"type": "string",
+			"default": ""
+		},
+		"allowedBlocks": {
+			"type": "array"
+		},
+		"templateLock": {
+			"type": "boolean",
+			"default": false
+		},
+		"orientation": {
+			"type": "string",
+			"default": "vertical"
+		}
+	},
+	"supports": {
+		"alignWide"          : true,
+		"align"              : ["full", "wide"],
+		"anchor"             : true,
+		"className"			 : false,
+		"customClassName"    : true,
+		"defaultStylePicker" : false,
+		"html"               : false
+	}
+}

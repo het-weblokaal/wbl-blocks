@@ -1,4 +1,10 @@
 /**
+ * README
+ *
+ * Developer note: see https://material.io/components/cards for card content and restraints
+ */
+
+/**
  * External dependancies
  */
 const { merge } = lodash;

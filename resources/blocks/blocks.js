@@ -17,15 +17,15 @@ const { registerBlockType } = wp.blocks;
 /**
  * Import blocks
  */
-import * as postsBlock from './posts/index';
-// import * as paragraphBlock from './paragraph/index';
-import * as testBlock from './test/index';
-import * as sectionBlock from './section/index';
+// import * as postsBlock from './posts/index';
+// import * as testBlock from './test/index';
+import * as segmentBlock from './segment/index';
+import * as containerBlock from './container/index';
 
 /**
  * Register Blocks
  */
-registerBlockType( postsBlock.name, postsBlock.settings );
-// registerBlockType( paragraphBlock.name, paragraphBlock.settings );
-registerBlockType( testBlock.name, testBlock.settings );
-registerBlockType( sectionBlock.name, sectionBlock.settings );
+// registerBlockType( postsBlock.name, postsBlock.settings );
+// registerBlockType( testBlock.name, testBlock.settings );
+registerBlockType( segmentBlock.name, segmentBlock.settings );
+registerBlockType( containerBlock.name, containerBlock.settings );

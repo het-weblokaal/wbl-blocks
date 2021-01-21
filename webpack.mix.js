@@ -7,18 +7,10 @@
  *
  * @link https://laravel-mix.com/docs/5.0/installation
  * @link https://laravel.com/docs/5.6/mix
- *
- * @package   WBL\Blocks
- * @author    Erik Joling <erik@hetweblokaal.nl>
- * @copyright 2020 Erik Joling
- * @link      https://www.hetweblokaal.nl/
  */
 
 // Import required packages.
 const mix = require( 'laravel-mix' );
-
-// Prevent webpack to copy media files each time (when changing css/js)
-// const processMedia = ! process.env.nomedia;
 
 /**
  * Sets the development path to assets. By default, this is the `/assets`
@@ -75,36 +67,8 @@ if (! mix.inProduction()) {
 mix.version();
 
 /**
- * Compile JavaScript.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-scripts
+ * Gutenberg blocks
  */
-// mix.js( `${devPath}/js/plugin.js`, 'js' );
-
-/**
- * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
- * for each of them.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
- */
-// mix.postCss( `${devPath}/css/plugin.css`, 'css' );
-
-/**
- * Compile blocks
- */
-mix.react(   `${devPath}/blocks/blocks.js`,         'blocks' )
-   .postCss( `${devPath}/blocks/blocks.editor.css`, 'blocks' )
-   .postCss( `${devPath}/blocks/blocks.css`, 	    'blocks' );
-
-/**
- * Copy images and fonts to public
- *
- * @link https://laravel-mix.com/docs/master/copying-files
- */
-// if ( processMedia ) {
-// 	mix.copy( `${devPath}/img/*`,   `${pubPath}/img` )
-// 	   .copy( `${devPath}/svg/*`,   `${pubPath}/svg` )
-// 	   .copy( `${devPath}/fonts/`,  `${pubPath}/fonts`, false );
-// }
-
-
+mix.react(   `${devPath}/blocks/blocks.js`,         'js'  )
+   .postCss( `${devPath}/blocks/blocks.editor.css`, 'css' )
+   .postCss( `${devPath}/blocks/blocks.css`, 	    'css' );

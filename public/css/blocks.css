@@ -1,0 +1,21 @@
+/**
+ * Block styles
+ */
+
+/* @import "test/style.css"; */
+
+/**
+ * Test block editor css
+ */
+
+.wbl-segment {
+	background-color: yellow;
+}
+
+/**
+ * wbl Container
+ */
+
+.wbl-container {
+	background-color: yellow;
+}

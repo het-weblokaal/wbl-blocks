@@ -1,4 +1,7 @@
 <?php
+
+use function WBL_Blocks\render_posts_post;
+
 $args = wp_parse_args( $args, [
 	'post_type' => 'post',
 	'posts_per_page' => 3,
@@ -14,7 +17,7 @@ $custom_query = new \WP_Query( $args );
 
 		<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-			<?php echo \WBL\Blocks\render_posts_post(); ?>
+			<?php echo render_posts_post(); ?>
 
 			<?php wp_reset_postdata(); ?>
 

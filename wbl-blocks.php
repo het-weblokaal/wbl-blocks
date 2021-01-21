@@ -15,7 +15,7 @@
  * GitHub Branch:      master
  */
 
-namespace WBL\Blocks;
+namespace WBL_Blocks;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,3 +36,12 @@ else {
 	exit;
 }
 
+# ------------------------------------------------------------------------------
+# Autoload functions files.
+# ------------------------------------------------------------------------------
+
+array_map( function( $file ) {
+	require_once( App::inc_path( "{$file}.php" ) );
+}, [
+	'setup',
+] );

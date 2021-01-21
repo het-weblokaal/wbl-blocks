@@ -3,7 +3,7 @@
  * Posts
  */
 
-namespace WBL\Blocks;
+namespace WBL_Blocks;
 
 // Register blocks
 add_action( 'init', __NAMESPACE__ . '\register_block_posts' );
@@ -12,7 +12,7 @@ add_action( 'init', __NAMESPACE__ . '\register_block_posts' );
  * Registers the Posts block.
  */
 function register_block_posts() {
-	register_block_type_from_metadata( App::get_src_path( "blocks/posts/"), [
+	register_block_type_from_metadata( App::src_path( "blocks/posts/"), [
 		'render_callback' => __NAMESPACE__ . '\render_block_posts',
 	] );
 }
@@ -72,7 +72,7 @@ function render_posts_archive() {
 
 	// Run template or fallback to default plugin template
 	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
-		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+		load_template( App::blocks_path( "posts/templates/{$template}.php" ), false );
 	}
 
 	return ob_get_clean();
@@ -92,7 +92,7 @@ function render_posts_custom( $args = null ) {
 
 	// Run template or fallback to default plugin template
 	if ( false === get_template_part( get_posts_template_for_themes( $template ), null, $args ) ) {
-		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false, $args );
+		load_template( App::blocks_path( "posts/templates/{$template}.php" ), false, $args );
 	}
 
 	return ob_get_clean();
@@ -106,7 +106,7 @@ function render_posts_post() {
 
 	// Run template or fallback to default plugin template
 	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
-		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+		load_template( App::blocks_path( "posts/templates/{$template}.php" ), false );
 	}
 
 	return ob_get_clean();
@@ -120,7 +120,7 @@ function render_posts_pagination() {
 
 	// Run template or fallback to default plugin template
 	if ( false === get_template_part( get_posts_template_for_themes( $template ) ) ) {
-		load_template( App::get_src_path( "blocks/posts/templates/{$template}.php" ), false );
+		load_template( App::blocks_path( "posts/templates/{$template}.php" ), false );
 	}
 
 	return ob_get_clean();

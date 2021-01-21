@@ -60,48 +60,61 @@ export function getImageSrc( media, size ) {
 	return src;
 }
 
-// export function buildClassNames() {
+/**
+ * Copied from core/media-text/edit.js
+ *
+ * @link https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/media-text/edit.js
+ */
+function attributesFromMedia( {
+	attributes: { linkDestination, href },
+	setAttributes,
+} ) {
+	return ( media ) => {
+		let mediaType;
+		let src;
+		// for media selections originated from a file upload.
+		if ( media.media_type ) {
+			if ( media.media_type === 'image' ) {
+				mediaType = 'image';
+			} else {
+				// only images and videos are accepted so if the media_type is not an image we can assume it is a video.
+				// video contain the media type of 'file' in the object returned from the rest api.
+				mediaType = 'video';
+			}
+		} else {
+			// for media selections originated from existing files in the media library.
+			mediaType = media.type;
+		}
 
-// }
+		if ( mediaType === 'image' ) {
+			// Try the "large" size URL, falling back to the "full" size URL below.
+			src =
+				media.sizes?.large?.url ||
+				// eslint-disable-next-line camelcase
+				media.media_details?.sizes?.large?.source_url;
+		}
 
-/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
+		let newHref = href;
+		if ( linkDestination === LINK_DESTINATION_MEDIA ) {
+			// Update the media link.
+			newHref = media.url;
+		}
 
-// var hasOwn = {}.hasOwnProperty;
+		// Check if the image is linked to the attachment page.
+		if ( linkDestination === LINK_DESTINATION_ATTACHMENT ) {
+			// Update the media link.
+			newHref = media.link;
+		}
 
-// export function classNames() {
-// 	var classes = [];
+		setAttributes( {
+			mediaAlt: media.alt,
+			mediaId: media.id,
+			mediaType,
+			mediaUrl: src || media.url,
+			mediaLink: media.link || undefined,
+			href: newHref,
+			focalPoint: undefined,
+		} );
+	};
+}
 
-// 	for (var i = 0; i < arguments.length; i++) {
-// 		var arg = arguments[i];
-// 		if (!arg) continue;
-
-// 		var argType = typeof arg;
-
-// 		if (argType === 'string' || argType === 'number') {
-// 			classes.push(arg);
-// 		} else if (Array.isArray(arg)) {
-// 			if(arg.length) {
-// 				var inner = classNames.apply(null, arg);
-// 				if (inner) {
-// 					classes.push(inner);
-// 				}
-// 			}
-// 		} else if (argType === 'object') {
-// 			if (arg.toString !== Object.prototype.toString) {
-// 				classes.push(arg.toString());
-// 			} else {
-// 				for (var key in arg) {
-// 					if (hasOwn.call(arg, key) && arg[key]) {
-// 						classes.push(key);
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	return classes.join(' ');
-// }

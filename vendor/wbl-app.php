@@ -16,7 +16,7 @@
  * 4. Make use of the methods through static::<method>
  */
 
-namespace ClimateCampus;
+namespace WBL_Blocks;
 
 /**
  * App Class

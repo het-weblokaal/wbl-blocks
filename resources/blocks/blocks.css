@@ -2,4 +2,6 @@
  * Block styles
  */
 
-@import "test/style.css";
+/* @import "test/style.css"; */
+@import "segment/style.css";
+@import "container/style.css";
