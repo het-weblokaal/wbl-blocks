@@ -20,6 +20,9 @@ function edit( { attributes, setAttributes, isSelected } ) {
 	// Get and setup attributes
 	const tagName        = attributes.tagName;
 	const variation      = attributes.variation;
+	const heading        = attributes.heading;
+	const headingLevel   = attributes.headingLevel;
+	const showHeading    = attributes.showHeading;
 	const allowedBlocks  = attributes.allowedBlocks;
 	const orientation    = attributes.orientation;
 	const templateLock   = attributes.templateLock ? 'insert' : false;
@@ -29,6 +32,7 @@ function edit( { attributes, setAttributes, isSelected } ) {
 	const variationClassName = (variation) ? baseClassName + '--' + variation : '';
 	const blockClassName     = (variationClassName) ? baseClassName + ' ' + variationClassName : baseClassName;
 	const TagName            = tagName;
+	const headingTagName     = 'h' + headingLevel;
 
 	// Innerblocks
 	// const renderAppender = InnerBlocks.ButtonBlockAppender;
@@ -39,42 +43,37 @@ function edit( { attributes, setAttributes, isSelected } ) {
 		className: blockClassName
 	} );
 
-	const blocksTemplate = [
-		[
-			'core/heading',
-			{ level: 2, content: __( 'Segment Title', 'wbl' ) },
-		],
-		[
-			'wbl/segment-content',
-			{},
-			[
-				[
-					'core/paragraph',
-					{ content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' }
-				]
-			]
-		],
-		[
-			'core/paragraph',
-			{ content: '<i>Segment Footer</i>' }
-		]
-	];
 
 	return (
 		<>
 			<TagName {...blockProps }>
 	        	<div className={ `${baseClassName}__inner` }>
-					<InnerBlocks
-						template={ blocksTemplate }
-						allowedBlocks={ allowedBlocks }
-						templateLock={ templateLock }
-						orientation={ orientation }
-						renderAppender={ renderAppender }
-					/>
+					{
+						(showHeading) &&
+							<RichText
+								className={ `${baseClassName}__title` }
+								tagName={ headingTagName }
+								value={ heading }
+								onChange={ ( newHeading ) => { setAttributes( { heading: newHeading } ) } }
+								placeholder={ __( 'Heading', 'wbl-blocks' ) }
+								keepPlaceholderOnFocus={true}
+								allowedFormats={ [] }
+							/>
+					}
+					<div className={ `${baseClassName}__content` }>
+						<InnerBlocks
+							allowedBlocks={ allowedBlocks }
+							templateLock={ templateLock }
+							orientation={ orientation }
+							renderAppender={ renderAppender }
+						/>
+					</div>
 				</div>
 			</TagName>
 			<EditSettings
 				setAttributes={ setAttributes }
+				showHeading={ showHeading }
+				headingLevel={ headingLevel }
 				tagName={ TagName }
 			/>
 		</>

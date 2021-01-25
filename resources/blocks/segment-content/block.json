@@ -1,0 +1,21 @@
+{
+	"apiVersion": 2,
+	"name": "wbl/segment-content",
+	"title": "Segment: Content",
+	"parent": [ "wbl/segment" ],
+	"category": "layout",
+	"icon": "editor-table",
+	"description": "Layoutstructure",
+	"textdomain": "wbl",
+	"attributes": {
+	},
+	"supports": {
+		"alignWide"          : true,
+		"align"              : ["full", "wide"],
+		"anchor"             : true,
+		"className"			 : false,
+		"customClassName"    : true,
+		"defaultStylePicker" : false,
+		"html"               : false
+	}
+}

@@ -8,6 +8,20 @@
 	"keywords": [ "Segment", "Container", "Section" ],
 	"textdomain": "wbl",
 	"attributes": {
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wbl-segment__title",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "string",
+			"default": "2"
+		},
 		"tagName": {
 			"type": "string",
 			"default": "div"

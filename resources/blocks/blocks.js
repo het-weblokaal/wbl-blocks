@@ -19,6 +19,7 @@ const { registerBlockType } = wp.blocks;
  */
 // import * as postsBlock from './posts/index';
 // import * as testBlock from './test/index';
+import * as segmentContentBlock from './segment-content/index';
 import * as segmentBlock from './segment/index';
 import * as containerBlock from './container/index';
 
@@ -27,5 +28,6 @@ import * as containerBlock from './container/index';
  */
 // registerBlockType( postsBlock.name, postsBlock.settings );
 // registerBlockType( testBlock.name, testBlock.settings );
+registerBlockType( segmentContentBlock.name, segmentContentBlock.settings );
 registerBlockType( segmentBlock.name, segmentBlock.settings );
 registerBlockType( containerBlock.name, containerBlock.settings );
