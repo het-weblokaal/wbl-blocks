@@ -25,6 +25,7 @@ function edit( { attributes, setAttributes, isSelected } ) {
 			{ content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' }
 		]
 	];
+	const renderAppender = (isSelected) ? InnerBlocks.ButtonBlockAppender : false;
 
 	// Setup blockProps
 	const blockProps = useBlockProps( {
@@ -37,6 +38,7 @@ function edit( { attributes, setAttributes, isSelected } ) {
 			<div {...blockProps }>
 				<InnerBlocks
 					template={ innerBlocksTemplate }
+					renderAppender={ renderAppender }
 				/>
 			</div>
 		</>
