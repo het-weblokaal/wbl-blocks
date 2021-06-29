@@ -7,6 +7,11 @@
  *
  * @link https://laravel-mix.com/docs/5.0/installation
  * @link https://laravel.com/docs/5.6/mix
+ *
+ * @package   WBL\Blocks
+ * @author    Erik Joling <erik@hetweblokaal.nl>
+ * @copyright 2021 Erik Joling
+ * @link      https://www.hetweblokaal.nl/
  */
 
 // Import required packages.
@@ -16,8 +21,9 @@ const mix = require( 'laravel-mix' );
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
  */
-const devPath  = 'resources';
-const pubPath  = 'public';
+const devPath  = 'src';
+const pubPath  = 'assets';
+const blockPath  = 'app/blocks';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -67,8 +73,14 @@ if (! mix.inProduction()) {
 mix.version();
 
 /**
- * Gutenberg blocks
+ * Compile Gutenberg blocks
  */
-mix.react(   `${devPath}/blocks/blocks.js`,         'js'  )
-   .postCss( `${devPath}/blocks/blocks.editor.css`, 'css' )
-   .postCss( `${devPath}/blocks/blocks.css`, 	    'css' );
+
+// Archive loop block
+mix.react(   `${blockPath}/archive-loop/index.js`,   'js/archive-loop.js'  )
+   .postCss( `${blockPath}/archive-loop/style.css`,  'css/archive-loop.css' );
+
+// // Blog loop block
+// mix.react(   `${blockPath}/blog-loop/index.js`,   'js/blog-loop.js'  )
+//    .postCss( `${blockPath}/blog-loop/style.css`,  'css/blog-loop.css' );
+

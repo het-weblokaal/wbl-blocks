@@ -10,7 +10,6 @@
 		"build": "npm run prod && npm run i18n",
 		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-		"watch:media": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"i18n": "npm run i18n:textdomain && npm run i18n:pot",
 		"i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
@@ -18,10 +17,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/erikjoling/wbl-blocks.git"
+		"url": "git+https://github.com/het-weblokaal/wbl-blocks.git"
 	},
 	"bugs": {
-		"url": "https://github.com/erikjoling/wbl-blocks/issues"
+		"url": "https://github.com/het-weblokaal/wbl-blocks/issues"
 	},
 	"devDependencies": {
 		"@babel/preset-react": "^7.9.4",
