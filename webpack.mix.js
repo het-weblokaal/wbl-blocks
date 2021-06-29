@@ -10,22 +10,20 @@
  *
  * @package   WBL\Blocks
  * @author    Erik Joling <erik@hetweblokaal.nl>
- * @copyright 2020 Erik Joling
+ * @copyright 2021 Erik Joling
  * @link      https://www.hetweblokaal.nl/
  */
 
 // Import required packages.
 const mix = require( 'laravel-mix' );
 
-// Prevent webpack to copy media files each time (when changing css/js)
-// const processMedia = ! process.env.nomedia;
-
 /**
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
  */
-const devPath  = 'resources';
-const pubPath  = 'public';
+const devPath  = 'src';
+const pubPath  = 'assets';
+const blockPath  = 'app/blocks';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -75,36 +73,14 @@ if (! mix.inProduction()) {
 mix.version();
 
 /**
- * Compile JavaScript.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-scripts
+ * Compile Gutenberg blocks
  */
-// mix.js( `${devPath}/js/plugin.js`, 'js' );
 
-/**
- * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
- * for each of them.
- *
- * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
- */
-// mix.postCss( `${devPath}/css/plugin.css`, 'css' );
+// Archive loop block
+mix.react(   `${blockPath}/archive-loop/index.js`,   'js/archive-loop.js'  )
+   .postCss( `${blockPath}/archive-loop/style.css`,  'css/archive-loop.css' );
 
-/**
- * Compile blocks
- */
-mix.react(   `${devPath}/blocks/blocks.js`,         'blocks' )
-   .postCss( `${devPath}/blocks/blocks.editor.css`, 'blocks' )
-   .postCss( `${devPath}/blocks/blocks.css`, 	    'blocks' );
-
-/**
- * Copy images and fonts to public
- *
- * @link https://laravel-mix.com/docs/master/copying-files
- */
-// if ( processMedia ) {
-// 	mix.copy( `${devPath}/img/*`,   `${pubPath}/img` )
-// 	   .copy( `${devPath}/svg/*`,   `${pubPath}/svg` )
-// 	   .copy( `${devPath}/fonts/`,  `${pubPath}/fonts`, false );
-// }
-
+// // Blog loop block
+// mix.react(   `${blockPath}/blog-loop/index.js`,   'js/blog-loop.js'  )
+//    .postCss( `${blockPath}/blog-loop/style.css`,  'css/blog-loop.css' );
 
