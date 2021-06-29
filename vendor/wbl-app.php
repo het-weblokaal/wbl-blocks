@@ -2,7 +2,6 @@
 /**
  * WordPress App Class for Plugins
  *
- * Version: 1.0-alpha-12
  * Author: Erik Joling | Het Weblokaal <erik.info@hetweblokaal.nl>
  * Author URI: https://www.hetweblokaal.nl/
  *
@@ -143,11 +142,11 @@ final class App {
 		 * The order of these setters is important because some 
 		 * depend on the other
 		 */
-		static::set_id( $args['id'] );
-		static::set_name();
+		static::set_meta_file();
 		static::set_path();
 		static::set_uri();
-		static::set_meta_file();
+		static::set_id( $args['id'] );
+		static::set_name();
 		static::set_version();
 		static::set_app_dir( $args['app_dir'] );
 		static::set_assets_dir( $args['assets_dir'] );
@@ -181,16 +180,6 @@ final class App {
 	public static function get_name() {
 
 		return static::$name;
-	}
-
-	/**
-	 * Gets the app directory path with trailing slash.
-	 *
-	 * @return string
-	 */
-	public static function get_foundation_dir() {
-
-		return static::$foundation_dir;
 	}
 
 	/**
@@ -336,7 +325,7 @@ final class App {
 	private static function set_path() {
 
 		// We expect this file to be in vendor folder.
-		static::$path = str_replace( 'vendor', '', plugin_dir_path(__FILE__) );
+		static::$path = str_replace( 'vendor/', '', plugin_dir_path(__FILE__) );
 	}
 
 	/**
@@ -347,7 +336,7 @@ final class App {
 	private static function set_uri() {
 
 		// We expect this file to be in vendor folder.
-		static::$uri = str_replace( 'vendor', '', plugin_dir_uri(__FILE__) );
+		static::$uri = str_replace( 'vendor/', '', plugin_dir_url(__FILE__) );
 	}
 
 	/**
@@ -453,7 +442,7 @@ final class App {
 		$manifest = static::assets_path( 'mix-manifest.json' );
 
 		// Get the contents of the manifest
-		$manifest = file_exists( $manifest ) ? json_decode( file_get_contents( $manifest ), true ) : false;
+		// $manifest = file_exists( $manifest ) ? json_decode( file_get_contents( $manifest ), true ) : false;
 
 		// Set manifest
 		static::$mix_manifest = $manifest;
@@ -532,7 +521,7 @@ final class App {
 		$svg = '';
 
 		if ($name) {
-			$svg = file_get_contents( static::asset( "svg/{$name}.svg" ) );
+			// $svg = file_get_contents( static::asset( "svg/{$name}.svg" ) );
 			$svg = ($svg) ? $svg : '';
 		}
 

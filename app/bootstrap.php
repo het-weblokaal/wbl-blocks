@@ -13,14 +13,9 @@ namespace WBL\Blocks;
 /**
  * App Class
  */
-if ( file_exists( __DIR__ . '/vendor/wbl-app.php' ) ) {
-    require_once( __DIR__ . '/vendor/wbl-app.php' );
+require_once( __DIR__ . '/../vendor/wbl-app.php' );
 
-    App::boot();
-}
-else {
-    exit;
-}
+App::boot( [ 'blocks_dir' => 'blocks' ] );
 
 /**
  * Composer Dependancies
