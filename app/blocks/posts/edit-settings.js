@@ -17,7 +17,7 @@ const EditSettings = ( { setAttributes, postsToShow } ) => (
 	<InspectorControls>
 		<PanelBody>
     		<RangeControl
-				label={ __( 'Number of projects', 'wbl-projects' ) }
+				label={ __( 'Number of posts', 'wbl-blocks' ) }
 				value={ postsToShow }
 				onChange={ ( newValue ) =>	setAttributes( { postsToShow: newValue } )	}
 				min={ 1 }

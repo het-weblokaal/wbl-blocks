@@ -42,5 +42,5 @@ array_map( function( $file ) {
     require_once( App::blocks_path( "{$file}.php" ) );
 }, [
     'archive-loop/index',
-    // 'posts/index',
+    'posts/index',
 ] );
