@@ -16,7 +16,7 @@ const { __ } = wp.i18n;
 function edit( { attributes, setAttributes, isSelected } ) {
 
 	// Setup new variables
-	const blockClassName = "wbl-archive-loop";
+	const blockClassName = "wbl-block-archive-loop";
 
 	// Setup blockProps
 	const blockProps = useBlockProps( {

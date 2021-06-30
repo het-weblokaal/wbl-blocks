@@ -17,5 +17,5 @@ const settings = merge(metadata, {
 	save: save
 });
 
-// Export
-export { name, settings };
+// Register the block
+wp.blocks.registerBlockType( name, settings );

@@ -3,12 +3,10 @@
  */
 const {	useBlockProps } = wp.blockEditor;
 const { __ } = wp.i18n;
-// const { withSelect } = wp.data;
 
 /**
  * Internal dependencies
  */
-// import { name } from './';
 import EditSettings from './edit-settings';
 
 
@@ -21,8 +19,7 @@ function edit( { attributes, setAttributes, isSelected } ) {
 	const postsToShow    = attributes.postsToShow;
 
 	// Setup new variables
-	const baseClassName      = "wbl-projects";
-	const blockClassName     = baseClassName;
+	const blockClassName  = 'wbl-block-posts';
 
 	// Setup blockProps
 	const blockProps = useBlockProps( {
@@ -32,9 +29,9 @@ function edit( { attributes, setAttributes, isSelected } ) {
 	return (
 		<>
 			<div {...blockProps }>
-	        	<div className={ `${baseClassName}__inner` }>
-		            <h2 className={ `${blockClassName}__title` }>{ __('Projects', 'wbl-projects' ) }</h2>
-		            <p className={ `${blockClassName}__text` }>{ __('This block will dynamically generate a number of projects. Check the frontend of your website.', 'wbl-projects' ) }</p>
+	        	<div className={ `${blockClassName}__inner` }>
+		            <h2 className={ `${blockClassName}__title` }>{ __('Posts', 'wbl-blocks' ) }</h2>
+		            <p className={ `${blockClassName}__text` }>{ __('This block will dynamically generate a number of posts. Check the frontend of your website.', 'wbl-blocks' ) }</p>
 				</div>
 			</div>
 			<EditSettings

@@ -15,7 +15,7 @@ namespace WBL\Blocks;
  */
 require_once( __DIR__ . '/../vendor/wbl-app.php' );
 
-App::boot( [ 'blocks_dir' => 'blocks' ] );
+App::boot();
 
 /**
  * Composer Dependancies

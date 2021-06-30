@@ -80,7 +80,7 @@ mix.version();
 mix.react(   `${blockPath}/archive-loop/index.js`,   'js/archive-loop.js'  )
    .postCss( `${blockPath}/archive-loop/style.css`,  'css/archive-loop.css' );
 
-// // Blog loop block
-// mix.react(   `${blockPath}/blog-loop/index.js`,   'js/blog-loop.js'  )
-//    .postCss( `${blockPath}/blog-loop/style.css`,  'css/blog-loop.css' );
+// Posts loop block
+mix.react(   `${blockPath}/posts/index.js`,   'js/posts.js'  )
+   .postCss( `${blockPath}/posts/style.css`,  'css/posts.css' );
 

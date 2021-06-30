@@ -1,16 +1,16 @@
 {
 	"apiVersion": 2,
-	"name": "wbl-projects/projects",
-	"title": "Projects",
+	"name": "wbl-blocks/posts",
+	"title": "Posts",
 	"category": "layout",
-	"icon": "portfolio",
-	"description": "Shows multiple projects",
-	"keywords": [ "Projects", "Initiatieven" ],
-	"textdomain": "wbl-projects",
+	"icon": "admin-post",
+	"description": "Shows latest posts",
+	"keywords": [ "blog", "posts", "berichten" ],
+	"textdomain": "wbl-blocks",
 	"attributes": {
 		"postsToShow": {
 			"type": "number",
-			"default": 2
+			"default": 3
 		}
 	},
 	"supports": {
