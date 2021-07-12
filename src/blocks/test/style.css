@@ -1,8 +1,0 @@
-/**
- * Test block editor css
- */
-
-.wbl-block-test {
-	background-color: var(--wp--preset--color--secondary-1);
-	color: var(--wp--preset--color--primary-1);
-}
