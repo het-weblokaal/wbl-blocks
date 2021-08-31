@@ -17,6 +17,10 @@ namespace WBL\Blocks;
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Bootstrap
-require_once( __DIR__ . '/app/bootstrap.php' );
-
+if ( wp_get_environment_type() == 'local' && file_exists( '/srv/www/local/wbl-blocks/app/bootstrap.php' ) ) {
+    require_once( '/srv/www/local/wbl-blocks/app/bootstrap.php' );
+}
+else {
+    // Bootstrap
+    require_once( __DIR__ . '/app/bootstrap.php' );
+}
